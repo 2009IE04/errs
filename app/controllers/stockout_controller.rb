@@ -7,7 +7,7 @@ class StockoutController < ApplicationController
     @current_date = params[:date]
     respond_to do |format|
       format.html {render :partial => "search"}
-      format.csv  {response_csv(@stock_out_list.to_csv([:product_id,:product_name,:purchase_quantity]).tosjis, params)}
+      format.csv  {response_csv(@stock_out_list.to_csv([:product_id,:product_name,:state_date,:purchase_quantity]).tosjis, params)}
     end
   end
 

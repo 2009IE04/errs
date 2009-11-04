@@ -11,11 +11,13 @@
 <table>
   <tr>
     <th>商品名</th>
+    <th>発注日</th>
     <th>発注数</th>
   </tr>
 <% @stock_out_list.each do |stock_out| %>
   <tr>
     <td><%=h stock_out.product.product_name %></td>
+    <td><%=h stock_out.state_date %></td>
     <td><%=h stock_out[:purchase_quantity] %></td>
   </tr>
 <% end %>
