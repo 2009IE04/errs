@@ -1,0 +1,11 @@
+# Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
+
+one:
+  supplier_id: 1
+  purchase_date: 2009-10-16
+  arrival_date: 2009-10-16
+
+two:
+  supplier_id: 1
+  purchase_date: 2009-10-16
+  arrival_date: 2009-10-16

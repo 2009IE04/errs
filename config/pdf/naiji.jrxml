@@ -1,0 +1,180 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="naiji" language="groovy" pageWidth="595" pageHeight="842" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20">
+	<subDataset name="dataset1"/>
+	<subDataset name="dataset2"/>
+	<parameter name="CLIENT_NAME" class="java.lang.String" isForPrompting="false">
+		<defaultValueExpression><![CDATA["株式会社XYZ"]]></defaultValueExpression>
+	</parameter>
+	<parameter name="POST_CODE" class="java.lang.String" isForPrompting="false">
+		<defaultValueExpression><![CDATA["999-9999"]]></defaultValueExpression>
+	</parameter>
+	<parameter name="ADDRESS" class="java.lang.String" isForPrompting="false">
+		<defaultValueExpression><![CDATA["東京都新宿区西新宿X-X-X"]]></defaultValueExpression>
+	</parameter>
+	<parameter name="FAX" class="java.lang.String" isForPrompting="false">
+		<defaultValueExpression><![CDATA["99-9999-9999"]]></defaultValueExpression>
+	</parameter>
+	<queryString>
+		<![CDATA[]]>
+	</queryString>
+	<field name="注文内容" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="数量" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="金額" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="備考" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="214" splitType="Stretch">
+			<rectangle>
+				<reportElement x="0" y="0" width="555" height="45" backcolor="#CCFFCC"/>
+			</rectangle>
+			<staticText>
+				<reportElement x="0" y="0" width="196" height="45"/>
+				<textElement>
+					<font size="30" pdfFontName="HeiseiKakuGo-W5" pdfEncoding="UniJIS-UCS2-H"/>
+				</textElement>
+				<text><![CDATA[内示注文書]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="0" y="57" width="134" height="15"/>
+				<textElement verticalAlignment="Top">
+					<font isUnderline="true" pdfFontName="HeiseiKakuGo-W5" pdfEncoding="UniJIS-UCS2-H"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA[$P{CLIENT_NAME}+"御中"]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="0" y="72" width="196" height="15"/>
+				<textElement verticalAlignment="Top">
+					<font isUnderline="false" pdfFontName="HeiseiKakuGo-W5" pdfEncoding="UniJIS-UCS2-H"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA["〒"+$P{POST_CODE}+" "+$P{ADDRESS}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="0" y="87" width="43" height="15"/>
+				<textElement verticalAlignment="Top">
+					<font isUnderline="false" pdfFontName="HeiseiKakuGo-W5" pdfEncoding="UniJIS-UCS2-H"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA[$P{FAX}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="0" y="117" width="302" height="47"/>
+				<textElement>
+					<font pdfFontName="HeiseiKakuGo-W5" pdfEncoding="UniJIS-UCS2-H"/>
+				</textElement>
+				<text><![CDATA[下記の通り内示注文致します。
+後日購買担当部門より正式注文書を発行します。
+納品前に購買発行注文書がない場合本状を正式注文扱とします。]]></text>
+			</staticText>
+			<rectangle>
+				<reportElement x="505" y="161" width="50" height="50"/>
+			</rectangle>
+			<rectangle>
+				<reportElement x="455" y="161" width="50" height="50"/>
+			</rectangle>
+			<rectangle>
+				<reportElement x="455" y="141" width="50" height="20"/>
+			</rectangle>
+			<rectangle>
+				<reportElement x="505" y="141" width="50" height="20"/>
+			</rectangle>
+			<staticText>
+				<reportElement x="455" y="141" width="50" height="20"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font pdfFontName="HeiseiKakuGo-W5" pdfEncoding="UniJIS-UCS2-H"/>
+				</textElement>
+				<text><![CDATA[所属長印]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="505" y="141" width="50" height="20"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font pdfFontName="HeiseiKakuGo-W5" pdfEncoding="UniJIS-UCS2-H"/>
+				</textElement>
+				<text><![CDATA[担当印]]></text>
+			</staticText>
+		</band>
+	</title>
+	<columnHeader>
+		<band height="18" splitType="Stretch">
+			<staticText>
+				<reportElement mode="Opaque" x="286" y="0" width="120" height="18" backcolor="#CCFFCC"/>
+				<textElement verticalAlignment="Middle">
+					<font pdfFontName="HeiseiKakuGo-W5" pdfEncoding="UniJIS-UCS2-H"/>
+				</textElement>
+				<text><![CDATA[金額]]></text>
+			</staticText>
+			<staticText>
+				<reportElement mode="Opaque" x="0" y="0" width="178" height="18" backcolor="#CCFFCC">
+					<property name="net.sf.jasperreports.export.pdf.tag.h1" value="full"/>
+				</reportElement>
+				<textElement verticalAlignment="Middle">
+					<font pdfFontName="HeiseiKakuGo-W5" pdfEncoding="UniJIS-UCS2-H"/>
+				</textElement>
+				<text><![CDATA[注文内容]]></text>
+			</staticText>
+			<staticText>
+				<reportElement mode="Opaque" x="406" y="0" width="149" height="18" backcolor="#CCFFCC"/>
+				<textElement verticalAlignment="Middle">
+					<font pdfFontName="HeiseiKakuGo-W5" pdfEncoding="UniJIS-UCS2-H"/>
+				</textElement>
+				<text><![CDATA[備考]]></text>
+			</staticText>
+			<staticText>
+				<reportElement mode="Opaque" x="178" y="0" width="108" height="18" backcolor="#CCFFCC"/>
+				<textElement verticalAlignment="Middle">
+					<font pdfFontName="HeiseiKakuGo-W5" pdfEncoding="UniJIS-UCS2-H"/>
+				</textElement>
+				<text><![CDATA[数量]]></text>
+			</staticText>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="17" splitType="Stretch">
+			<textField pattern="">
+				<reportElement x="0" y="0" width="178" height="17"/>
+				<textElement verticalAlignment="Middle">
+					<font pdfFontName="HeiseiKakuGo-W5" pdfEncoding="UniJIS-UCS2-H"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{注文内容}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="178" y="0" width="108" height="17"/>
+				<textElement verticalAlignment="Middle">
+					<font pdfFontName="HeiseiKakuGo-W5" pdfEncoding="UniJIS-UCS2-H"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{数量}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="286" y="0" width="120" height="17"/>
+				<textElement verticalAlignment="Middle">
+					<font pdfFontName="HeiseiKakuGo-W5" pdfEncoding="UniJIS-UCS2-H"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{金額}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="406" y="0" width="149" height="17"/>
+				<textElement verticalAlignment="Middle">
+					<font pdfFontName="HeiseiKakuGo-W5" pdfEncoding="UniJIS-UCS2-H"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{備考}]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+	<pageFooter>
+		<band height="35" splitType="Stretch">
+			<textField>
+				<reportElement x="226" y="15" width="100" height="20"/>
+				<textElement/>
+				<textFieldExpression class="java.lang.Integer"><![CDATA[$V{PAGE_NUMBER}]]></textFieldExpression>
+			</textField>
+		</band>
+	</pageFooter>
+</jasperReport>

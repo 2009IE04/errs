@@ -1,0 +1,25 @@
+# Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
+
+one:
+  state_date: 2009-10-01
+  product_id: 1
+  quantity: 30
+  forcast: 10
+
+two:
+  state_date: 2009-10-05
+  product_id: 2
+  quantity: 40
+  forcast: 20
+
+three:
+  state_date: 2009-10-16
+  product_id: 2
+  quantity: 20
+  forcast: 0
+
+four:
+  state_date: 2009-10-16
+  product_id: 1
+  quantity: 30
+  forcast: -20

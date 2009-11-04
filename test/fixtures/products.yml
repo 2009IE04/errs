@@ -1,0 +1,13 @@
+# Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
+
+one:
+  product_name: MyString
+  supplier_id: 1
+  stock: 1
+  order_point: 1
+
+two:
+  product_name: MyString
+  supplier_id: 1
+  stock: 1
+  order_point: 1

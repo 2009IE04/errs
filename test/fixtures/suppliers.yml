@@ -1,0 +1,7 @@
+# Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
+
+one:
+  supplier_name: MyString
+
+two:
+  supplier_name: MyString

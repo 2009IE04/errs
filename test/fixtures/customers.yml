@@ -1,0 +1,11 @@
+# Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
+
+one:
+  customer_name: MyString
+  furigana: MyString
+  person_in_charge: MyString
+
+two:
+  customer_name: MyString
+  furigana: MyString
+  person_in_charge: MyString
