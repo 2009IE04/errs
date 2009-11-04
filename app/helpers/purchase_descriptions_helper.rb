@@ -1,0 +1,2 @@
+module PurchaseDescriptionsHelper
+end

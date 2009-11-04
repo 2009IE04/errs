@@ -1,0 +1,5 @@
+<%= label_tag 'login' %>
+<%  form_tag({:action => 'index'}, :method => 'get') do %>
+  <%= text_field_tag 'employee_id'  %>
+  <%= submit_tag ' IN '  %>
+<%  end  %>

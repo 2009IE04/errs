@@ -1,0 +1,22 @@
+<% form_tag({:action => 'search', :format => 'csv'}, {:style => 'float:left'}) do -%>
+  <%= hidden_field_tag 'date[year]', @current_date[:year] %>
+  <%= hidden_field_tag 'date[month]', @current_date[:month] %>
+  <%= submit_tag 'CSV出力' %>
+<% end -%>
+<% form_tag :action => 'pdf' do -%>
+  <%= hidden_field_tag 'date[year]', @current_date[:year] %>
+  <%= hidden_field_tag 'date[month]', @current_date[:month] %>
+  <%= submit_tag '内示書出力' %>
+<% end -%>
+<table>
+  <tr>
+    <th>商品名</th>
+    <th>発注数</th>
+  </tr>
+<% @stock_out_list.each do |stock_out| %>
+  <tr>
+    <td><%=h stock_out.product.product_name %></td>
+    <td><%=h stock_out[:purchase_quantity] %></td>
+  </tr>
+<% end %>
+</table>

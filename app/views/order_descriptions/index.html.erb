@@ -1,0 +1,24 @@
+<h1>Listing order_descriptions</h1>
+
+<table>
+  <tr>
+    <th>Order</th>
+    <th>Product</th>
+    <th>Quantity</th>
+  </tr>
+
+<% @order_descriptions.each do |order_description| %>
+  <tr>
+    <td><%=h order_description.order_id %></td>
+    <td><%=h order_description.product_id %></td>
+    <td><%=h order_description.quantity %></td>
+    <td><%= link_to 'Show', order_description %></td>
+    <td><%= link_to 'Edit', edit_order_description_path(order_description) %></td>
+    <td><%= link_to 'Destroy', order_description, :confirm => 'Are you sure?', :method => :delete %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New order_description', new_order_description_path %>

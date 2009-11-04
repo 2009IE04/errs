@@ -1,0 +1,41 @@
+<% javascript_tag do -%>
+function $N(element) {
+  var elms = document.getElementsByName(element);
+
+  elmArray = Array();
+
+  for(i = 0; i < elms.length; i++){
+    elmArray.push(Element.extend(elms.item(i)));
+  }
+
+  return elmArray;
+}
+function checkAllElement(){
+  var checked = $('checkAll').checked
+  var elms = $N('suppliers[]');
+  elms.each(function(item){
+    item.checked = checked;
+  });
+}
+<% end %>
+<h1>内示書一覧（<%=@current_date[:year]%>年<%=@current_date[:month]%>月）</h1>
+<% form_tag({:action => 'send_mail'}) do -%>
+<table>
+  <tr>
+    <th>
+      <%= check_box("item", "checkall",
+      "onclick" => "checkAllElement();",:id => "checkAll") %>
+    </th>
+    <th>内示書ダウンロード</th>
+  </tr>
+<% @pdfs.each do |pdf| %>
+  <tr>
+    <td>
+        <%= check_box_tag("suppliers[]","#{pdf[:pdf_name]},#{pdf[:supplier_id]}" ) %>
+    </td>
+    <td><%= link_to pdf[:supplier_name], '/pdf/'+url_encode(pdf[:pdf_name]) %></td>
+  </tr>
+<% end %>
+</table>
+<%= submit_tag 'メール送信' %>
+<% end %>

@@ -1,0 +1,18 @@
+<p>
+  <b>Purchase:</b>
+  <%=h @purchase_description.purchase_id %>
+</p>
+
+<p>
+  <b>Product:</b>
+  <%=h @purchase_description.product_id %>
+</p>
+
+<p>
+  <b>Quantity:</b>
+  <%=h @purchase_description.quantity %>
+</p>
+
+
+<%= link_to 'Edit', edit_purchase_description_path(@purchase_description) %> |
+<%= link_to 'Back', purchase_descriptions_path %>

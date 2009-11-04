@@ -1,0 +1,18 @@
+<p>
+  <b>Order:</b>
+  <%=h @order_description.order_id %>
+</p>
+
+<p>
+  <b>Product:</b>
+  <%=h @order_description.product_id %>
+</p>
+
+<p>
+  <b>Quantity:</b>
+  <%=h @order_description.quantity %>
+</p>
+
+
+<%= link_to 'Edit', edit_order_description_path(@order_description) %> |
+<%= link_to 'Back', order_descriptions_path %>

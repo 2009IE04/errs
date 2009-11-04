@@ -1,0 +1,18 @@
+<p>
+  <b>Employee name:</b>
+  <%=h @employee.employee_name %>
+</p>
+
+<p>
+  <b>Department name:</b>
+  <%=h @employee.department_name %>
+</p>
+
+<p>
+  <b>Password:</b>
+  <%=h @employee.password %>
+</p>
+
+
+<%= link_to 'Edit', edit_employee_path(@employee) %> |
+<%= link_to 'Back', employees_path %>

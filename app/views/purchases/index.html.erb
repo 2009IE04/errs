@@ -1,0 +1,24 @@
+<h1>Listing purchases</h1>
+
+<table>
+  <tr>
+    <th>Supplier</th>
+    <th>Purchase date</th>
+    <th>Arrival date</th>
+  </tr>
+
+<% @purchases.each do |purchase| %>
+  <tr>
+    <td><%=h purchase.supplier_id %></td>
+    <td><%=h purchase.purchase_date %></td>
+    <td><%=h purchase.arrival_date %></td>
+    <td><%= link_to 'Show', purchase %></td>
+    <td><%= link_to 'Edit', edit_purchase_path(purchase) %></td>
+    <td><%= link_to 'Destroy', purchase, :confirm => 'Are you sure?', :method => :delete %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New purchase', new_purchase_path %>

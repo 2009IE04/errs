@@ -1,0 +1,23 @@
+<p>
+  <b>State date:</b>
+  <%=h @stock_state.state_date %>
+</p>
+
+<p>
+  <b>Product:</b>
+  <%=h @stock_state.product_id %>
+</p>
+
+<p>
+  <b>Quantity:</b>
+  <%=h @stock_state.quantity %>
+</p>
+
+<p>
+  <b>Forcast:</b>
+  <%=h @stock_state.forcast %>
+</p>
+
+
+<%= link_to 'Edit', edit_stock_state_path(@stock_state) %> |
+<%= link_to 'Back', stock_states_path %>

@@ -1,0 +1,26 @@
+<h1>Listing stock_states</h1>
+
+<table>
+  <tr>
+    <th>State date</th>
+    <th>Product</th>
+    <th>Quantity</th>
+    <th>Forcast</th>
+  </tr>
+
+<% @stock_states.each do |stock_state| %>
+  <tr>
+    <td><%=h stock_state.state_date %></td>
+    <td><%=h stock_state.product_id %></td>
+    <td><%=h stock_state.quantity %></td>
+    <td><%=h stock_state.forcast %></td>
+    <td><%= link_to 'Show', stock_state %></td>
+    <td><%= link_to 'Edit', edit_stock_state_path(stock_state) %></td>
+    <td><%= link_to 'Destroy', stock_state, :confirm => 'Are you sure?', :method => :delete %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New stock_state', new_stock_state_path %>

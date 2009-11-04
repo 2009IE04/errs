@@ -1,0 +1,21 @@
+<h1>Listing Deliverable</h1>
+
+<table>
+  <tr>
+    <th>Order id</th>
+    <th>Product name</th>
+    <th>Quantity</th>
+    <th>Deliverable</th>
+  </tr>
+
+<% @products.each do |product| %>
+  <tr>
+    <td><%=h product.order_descriptions.first.order_id %></td>
+    <td><%=h product.product_name %></td>
+    <td><%=h product.order_descriptions.first.quantity %></td>
+    <td><%= deliverable_state product.stock_states.first%></td>
+<% end %>
+</table>
+
+<%= link_to 'Back', :controller => 'charge', :action => 'index', :employee_id => @employee.id, :customer_id => @customer.id %>
+<br />

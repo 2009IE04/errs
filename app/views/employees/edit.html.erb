@@ -1,0 +1,24 @@
+<h1>Editing employee</h1>
+
+<% form_for(@employee) do |f| %>
+  <%= f.error_messages %>
+
+  <p>
+    <%= f.label :employee_name %><br />
+    <%= f.text_field :employee_name %>
+  </p>
+  <p>
+    <%= f.label :department_name %><br />
+    <%= f.text_field :department_name %>
+  </p>
+  <p>
+    <%= f.label :password %><br />
+    <%= f.text_field :password %>
+  </p>
+  <p>
+    <%= f.submit 'Update' %>
+  </p>
+<% end %>
+
+<%= link_to 'Show', @employee %> |
+<%= link_to 'Back', employees_path %>

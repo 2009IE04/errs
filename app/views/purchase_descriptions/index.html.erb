@@ -1,0 +1,24 @@
+<h1>Listing purchase_descriptions</h1>
+
+<table>
+  <tr>
+    <th>Purchase</th>
+    <th>Product</th>
+    <th>Quantity</th>
+  </tr>
+
+<% @purchase_descriptions.each do |purchase_description| %>
+  <tr>
+    <td><%=h purchase_description.purchase_id %></td>
+    <td><%=h purchase_description.product_id %></td>
+    <td><%=h purchase_description.quantity %></td>
+    <td><%= link_to 'Show', purchase_description %></td>
+    <td><%= link_to 'Edit', edit_purchase_description_path(purchase_description) %></td>
+    <td><%= link_to 'Destroy', purchase_description, :confirm => 'Are you sure?', :method => :delete %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New purchase_description', new_purchase_description_path %>

@@ -1,0 +1,23 @@
+<p>
+  <b>Product name:</b>
+  <%=h @product.product_name %>
+</p>
+
+<p>
+  <b>Supplier:</b>
+  <%=h @product.supplier_id %>
+</p>
+
+<p>
+  <b>Stock:</b>
+  <%=h @product.stock %>
+</p>
+
+<p>
+  <b>Order point:</b>
+  <%=h @product.order_point %>
+</p>
+
+
+<%= link_to 'Edit', edit_product_path(@product) %> |
+<%= link_to 'Back', products_path %>

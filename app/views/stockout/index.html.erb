@@ -1,0 +1,8 @@
+<h1>在庫切れ商品一覧</h1>
+在庫切れ商品を表示したい月を選択して、表示ボタンをクリックしてください。
+<% form_remote_tag :url => {:action => 'search'}, :update => 'result', :id => 'month_form' do -%>
+  <%= select_date(Date.today, :discard_day => true, :use_month_numbers => true, :start_year => Date::new(1996).year) %>
+  <%= submit_tag '表示' %>
+<% end -%>
+<div id="result">
+</div>
