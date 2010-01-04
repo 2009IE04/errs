@@ -2,12 +2,18 @@ require 'rubygems'
 require 'active_record'
 
 ActiveRecord::Base.establish_connection(
-  :adapter => 'mysql',
-  :coding => 'utf8',
-  :host => 'localhost',
+  :adapter => 'jdbcmysql',
+  :encoding => 'utf8',
+  :database => 'errs_base',
   :username => 'root',
   :password => 'root',
-  :database => 'errs_base'
+  :host => 'localhost'
+#  :adapter => 'mysql',
+#  :coding => 'utf8',
+#  :host => 'localhost',
+#  :username => 'root',
+#  :password => 'root',
+#  :database => 'errs_base'
 )
 
 class Order < ActiveRecord::Base
