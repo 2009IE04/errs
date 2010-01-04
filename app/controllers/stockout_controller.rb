@@ -33,12 +33,14 @@ class StockoutController < ApplicationController
     suppliers = params[:suppliers]
     puts "======="
     puts suppliers.inspect
+    @suppliers = Array.new
     suppliers.each do |spl|
       puts spl.split(",").inspect
       supplier = Supplier.find(spl.split(",").last)
       puts supplier.inspect
+      @suppliers << supplier
       Sendmail.deliver_result(supplier,spl.split(",").first)
-    end 
+    end
   end
 
   private

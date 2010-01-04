@@ -2,7 +2,9 @@
 # To change this template, choose Tools | Templates
 # and open the template in the editor.
 %>
-
-<%= "send_mail.html.erb" %>
-
-メールを送信しました
+以下の仕入先にメールを送信しました。<br>
+<ul>
+<% @suppliers.each do |supplier| %>
+  <li><%= supplier.supplier_name %>様</li>
+<% end %>
+</ul>
