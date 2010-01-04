@@ -33,7 +33,7 @@ function checkAllElement(){
     <td>
         <%= check_box_tag("suppliers[]","#{pdf[:pdf_name]},#{pdf[:supplier_id]}" ) %>
     </td>
-    <td><%= link_to pdf[:supplier_name], '/pdf/'+url_encode(pdf[:pdf_name]) %></td>
+    <td><%= link_to pdf[:supplier_name], '../pdf/'+url_encode(pdf[:pdf_name]) %></td>
   </tr>
 <% end %>
 </table>
