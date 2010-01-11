@@ -1,6 +1,7 @@
 <h1>Listing customers</h1>
 <% form_tag({:action => 'index'}, :method => 'get') do %>
   <%= text_field_tag 'keyword', params[:keyword], :size => 30 %>
+  <%= hidden_field_tag 'employee_id', @employee.id %>
   <%= submit_tag("検索") %>
 <% end %>
 
