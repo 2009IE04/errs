@@ -1,0 +1,16 @@
+<table>
+  <tr>
+    <th>日付</th>
+    <th>出荷予定</th>
+    <th>入荷予定</th>
+    <th>予定在庫</th>
+  </tr>
+<% @stock_states.each do |stock_state| %>
+  <tr>
+    <td><%=h stock_state.state_date %></td>
+    <td><%=h stock_state.out_quantity %></td>
+    <td><%=h stock_state.in_quantity %></td>
+    <td><%=h stock_state.forcast %></td>
+  </tr>
+<% end %>
+</table>

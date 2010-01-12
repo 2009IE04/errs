@@ -1,26 +1,16 @@
-<h1>Listing stock_states</h1>
+<h1>在庫遷移</h1>
 
+<% form_remote_tag :url => {:action => 'search'}, :update => 'result', :id => 'form1' do -%>
 <table>
-  <tr>
-    <th>State date</th>
-    <th>Product</th>
-    <th>Quantity</th>
-    <th>Forcast</th>
-  </tr>
-
-<% @stock_states.each do |stock_state| %>
-  <tr>
-    <td><%=h stock_state.state_date %></td>
-    <td><%=h stock_state.product_id %></td>
-    <td><%=h stock_state.quantity %></td>
-    <td><%=h stock_state.forcast %></td>
-    <td><%= link_to 'Show', stock_state %></td>
-    <td><%= link_to 'Edit', edit_stock_state_path(stock_state) %></td>
-    <td><%= link_to 'Destroy', stock_state, :confirm => 'Are you sure?', :method => :delete %></td>
-  </tr>
-<% end %>
+<tr>
+<td>商品：</td>
+<td><%= select(:post, :product_id, @products.map{|p| [p.product_name, p.id]}) %></td>
+</tr>
+<td>期間：</td>
+<td><%= select_date(Date.today, :use_month_numbers => true, :start_year => Date::new(1996).year, :prefix => 'start_date') %>～<%= select_date(Date.today, :use_month_numbers => true, :start_year => Date::new(1996).year, :prefix => 'end_date') %></td>
+</tr>
 </table>
+<%= submit_tag "表示" %>
+<% end %>
 
-<br />
-
-<%= link_to 'New stock_state', new_stock_state_path %>
+<div id="result"></div>

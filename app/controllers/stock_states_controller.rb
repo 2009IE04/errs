@@ -2,12 +2,13 @@ class StockStatesController < ApplicationController
   # GET /stock_states
   # GET /stock_states.xml
   def index
-    @stock_states = StockState.all
+    @products = Product.all
+  end
 
-    respond_to do |format|
-      format.html # index.html.erb
-      format.xml  { render :xml => @stock_states }
-    end
+  def search
+    start_date = get_time(params[:start_date])
+    end_date = get_time(params[:end_date])
+    @stock_states = StockState.find(:all, :conditions => ["product_id=? and state_date>=? and state_date<=?", params[:post][:product_id], start_date, end_date])
   end
 
   # GET /stock_states/1
@@ -81,5 +82,10 @@ class StockStatesController < ApplicationController
       format.html { redirect_to(stock_states_url) }
       format.xml  { head :ok }
     end
+  end
+  
+  private
+  def get_time(date_params)
+    Time.mktime(date_params[:year],date_params[:month],date_params[:day])
   end
 end

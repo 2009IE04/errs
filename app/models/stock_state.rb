@@ -4,6 +4,14 @@ class StockState < ActiveRecord::Base
   named_scope :min_stock_by_product, lambda {|klass|
     {:conditions => ["DATE_FORMAT(state_date, '%Y%m') = :date", {:date => klass[:date]}]}
   }
+  
+  def in_quantity
+    quantity <= 0 ? "" : quantity
+  end
+  
+  def out_quantity
+    quantity >= 0 ? "" : -quantity
+  end
 
   def self.find_stock_out date
     klass = {:date => date[:year]+date[:month]}
