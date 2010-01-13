@@ -1,7 +1,12 @@
 class ChargeController < ApplicationController
+
+  before_filter :login_required
+
   def index
 
-    @employee = Employee.find(params[:employee_id])
+    employee_id = User.find(session[:user_id]).employee_id
+    @employee = Employee.find(employee_id)
+
     orders =  @employee.orders
     customer_ids = orders.map{ |order| order.customer.id }.uniq
 
