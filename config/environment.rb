@@ -39,6 +39,7 @@ Rails::Initializer.run do |config|
   # config.i18n.load_path += Dir[Rails.root.join('my', 'locales', '*.{rb,yml}')]
   # config.i18n.default_locale = :de
   require 'tlsmail'
+
 Net::SMTP.enable_tls(OpenSSL::SSL::VERIFY_NONE)
 config.action_mailer.raise_delivery_errors = true
 config.action_mailer.perform_deliveries = true
@@ -51,4 +52,7 @@ config.action_mailer.smtp_settings = {
    :user_name => "",
    :password => ""
 }
+
 end
+
+CalendarDateSelect.format = :iso_date

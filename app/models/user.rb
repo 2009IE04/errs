@@ -35,7 +35,7 @@ class User < ActiveRecord::Base
   # This will also let us return a human error message.
   #
   def self.authenticate(login, password)
-    return nil if login.blank? || password.blank?
+    return nil if login.blank? || password.blank? || !(login =~ /^[1-9]*[0-9]+$/)
     employee = Employee.find(login)
     u = employee.user
 #    u = find_by_employee_id(employee_id)
