@@ -1,16 +1,21 @@
-<h1>在庫遷移</h1>
+<h2>在庫遷移</h2>
 
-<% form_remote_tag :url => {:action => 'search'}, :update => 'result', :id => 'form1' do -%>
-<table class="table">
-<tr>
-<td>商品：</td>
-<td><%= select(:post, :product_id, @products.map{|p| [p.product_name, p.id]}) %></td>
-</tr>
-<td>期間：</td>
-<td><%= select_date(Date.today, :use_month_numbers => true, :start_year => Date::new(1996).year, :prefix => 'start_date') %>～<%= select_date(Date.today, :use_month_numbers => true, :start_year => Date::new(1996).year, :prefix => 'end_date') %></td>
-</tr>
-</table>
-<%= submit_tag "表示" %>
+<div style="padding:10px;">
+<% form_remote_tag :url => {:action => 'search'}, :update => 'result', :html => {:class => 'form'} do -%>
+<div class="group">
+  <label class="label">商品</label>
+  <%= select(:post, :product_id, @products.map{|p| [p.product_name, p.id]}) %>
+</div>
+<div class="group">
+  <label class="label">期間</label>
+  <%= select_date(Date.today, :use_month_numbers => true, :start_year => Date::new(1996).year, :prefix => 'start_date') %>～<%= select_date(Date.today, :use_month_numbers => true, :start_year => Date::new(1996).year, :prefix => 'end_date') %>
+</div>
+<div class="group navform wat-cf">
+                  <button class="button" type="submit">
+                    <img src="../images/web-app-theme/tick.png" alt="表示"> 表示
+                  </button>
+</div>
 <% end %>
+</div>
 
 <div id="result"></div>

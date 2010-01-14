@@ -34,7 +34,11 @@
         <% end -%>
       </div>
       <div id="main" style="width:100%">
-        <%= yield %>
+        <div id="box" style="width:100%;margin:0;">
+        <div class="block">
+          <%= yield %>
+        </div>
+        </div>
         <%= render :partial => 'shared/footer' %>
       </div>
     </div>
