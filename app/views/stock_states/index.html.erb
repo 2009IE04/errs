@@ -9,7 +9,7 @@
 
 <div class="group">
   <label class="label">期間</label>
-<%= calendar_date_select_tag "date[start_date]", Time.now, :year_range => 20  %>〜<%= calendar_date_select_tag "date[end_date]", Time.now, :year_range => 20 %>
+<%= calendar_date_select_tag "date[start_date]", Time.now, :year_range => 20, :popup => :force  %>〜<%= calendar_date_select_tag "date[end_date]", Time.now, :year_range => 20, :popup => :force %>
 </div>
 <div class="group navform wat-cf">
   <%= submit_tag '表示'%>
