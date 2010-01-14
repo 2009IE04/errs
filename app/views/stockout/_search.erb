@@ -8,14 +8,14 @@
   <%= hidden_field_tag 'date[month]', @current_date[:month] %>
   <%= submit_tag '内示書出力' %>
 <% end -%>
-<table>
+<table class="table">
   <tr>
-    <th>商品名</th>
-    <th>発注日</th>
-    <th>発注数</th>
+    <th class="first" style="width:50%">商品名</th>
+    <th style="width:25%">発注日</th>
+    <th class="last" style="width:25%">発注数</th>
   </tr>
-<% @stock_out_list.each do |stock_out| %>
-  <tr>
+<% @stock_out_list.each_with_index do |stock_out, index| %>
+  <tr class="<%=index%2? 'even':'odd'%>">
     <td><%=h stock_out.product.product_name %></td>
     <td><%=h stock_out.state_date %></td>
     <td><%=h stock_out[:purchase_quantity] %></td>

@@ -1,11 +1,7 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en">
 <head>
-  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-  <meta name="viewport" id="iphone-viewport" content="width=480, user-scalable=no, maximum-scale=0.6667" />
-        <title>ERRS</title>
-        <%= stylesheet_link_tag "web_app_theme", "web_app_theme_override", "themes/default/style", :cache => true %>
-        <%= javascript_include_tag :defaults%>
+  <%= render :partial => 'shared/header' %>
 </head>
 <body>
   <div id="container">
@@ -37,16 +33,9 @@
           </div>
         <% end -%>
       </div>
-      <div id="main">
+      <div id="main" style="width:100%">
         <%= yield %>
-        <div id="footer">
-          <div class="block">
-            <p>Copyright &copy; <%= Time.now.year %> Your Site.</p>
-          </div>
-        </div>
-      </div>
-      <div id="sidebar">
-        <%= yield :sidebar %>
+        <%= render :partial => 'shared/footer' %>
       </div>
     </div>
   </div>
