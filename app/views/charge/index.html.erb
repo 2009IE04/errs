@@ -1,23 +1,23 @@
-<h1>Listing customers</h1>
+<h1>出荷可能一覧</h1>
 <% form_tag({:action => 'index'}, :method => 'get') do %>
   <%= text_field_tag 'keyword', params[:keyword], :size => 30 %>
   <%= hidden_field_tag 'employee_id', @employee.id %>
   <%= submit_tag("検索") %>
 <% end %>
 
-<table>
-  <tr>
-    <th>Customer name</th>
+<table class="table">
+  <tr >
+    <th class="first" style="width: 90%;">得意先</th>
+    <th class="last"></th>
   </tr>
 
 <% @customers.each do |customer| %>
   <tr>
     <td><%= deliverable_link_to customer, @employee %>(<%=h customer.furigana %>)</td>
+    <td></td>
   </tr>
 
 <% end %>
 </table>
-
-<%= link_to 'Logout', :controller => 'sessions', :action => 'destroy' %>
 
 <br />

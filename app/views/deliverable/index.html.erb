@@ -1,11 +1,11 @@
-<h1>Listing Deliverable</h1>
+<h1>得意先一覧</h1>
 
-<table>
+<table class="table">
   <tr>
-    <th>Order id</th>
-    <th>Product name</th>
-    <th>Quantity</th>
-    <th>Deliverable</th>
+    <th class="first" style="width:15%;">ID</th>
+    <th style="width:35%;">商品名</th>
+    <th style="width:25%;">数量</th>
+    <th class="last" style="width:25%;">出荷可能</th>
   </tr>
 
 <% @products.each do |product| %>
@@ -17,5 +17,5 @@
 <% end %>
 </table>
 
-<%= link_to 'Back', :controller => 'charge', :action => 'index', :employee_id => @employee.id, :customer_id => @customer.id %>
+<%= link_to '戻る', :controller => 'charge', :action => 'index', :employee_id => @employee.id, :customer_id => @customer.id %>
 <br />
