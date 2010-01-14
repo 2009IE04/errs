@@ -1,0 +1,17 @@
+﻿<style type="text/css">
+.menu{
+  margin-left:10px;
+}
+.menu a{
+  font-weight:bold;
+  font-size:1.2em;
+}
+.menu div{
+  padding-bottom: 10px;
+}
+</style>
+<div class="menu">
+<div><%= link_to '在庫遷移', :controller => :stock_states %></div>
+<div><%= link_to '在庫切れ一覧', :controller => :stockout %></div>
+<div><%= link_to '出荷可能一覧', :controller => :charge %></div>
+</div>
