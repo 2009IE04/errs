@@ -17,7 +17,7 @@
       </div>
       <div id="main-navigation">
         <ul class="wat-cf">
-          <% tabs = [["HOME", "home"] ,["在庫遷移", "stock_states"], ["在庫切れ商品一覧","stockout"], ["出荷可能リスト","charge"]] %>
+          <% tabs = [["ホーム", "home"] ,["在庫遷移", "stock_states"], ["在庫切れ一覧","stockout"], ["出荷可能一覧","charge"]] %>
           <% tabs.each do |tab| %>
             <% if params[:controller] == tab.last %>
               <li class="active"><%= link_to tab.first, :controller => tab.last %></li>
