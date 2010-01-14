@@ -1,12 +1,12 @@
-<table>
+<table class="table">
   <tr>
-    <th>日付</th>
-    <th>出荷予定</th>
-    <th>入荷予定</th>
-    <th>予定在庫</th>
+    <th class="first" style="width:25%">日付</th>
+    <th style="width:25%">出荷予定</th>
+    <th style="width:25%">入荷予定</th>
+    <th class="last" style="width:25%">予定在庫</th>
   </tr>
-<% @stock_states.each do |stock_state| %>
-  <tr>
+<% @stock_states.each_with_index do |stock_state, index| %>
+  <tr class="<%=index%2==0? 'even':'odd'%>">
     <td><%=h stock_state.state_date %></td>
     <td><%=h stock_state.out_quantity %></td>
     <td><%=h stock_state.in_quantity %></td>

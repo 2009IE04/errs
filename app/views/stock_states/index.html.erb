@@ -1,7 +1,7 @@
 <h1>在庫遷移</h1>
 
 <% form_remote_tag :url => {:action => 'search'}, :update => 'result', :id => 'form1' do -%>
-<table>
+<table class="table">
 <tr>
 <td>商品：</td>
 <td><%= select(:post, :product_id, @products.map{|p| [p.product_name, p.id]}) %></td>
