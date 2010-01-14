@@ -1,7 +1,4 @@
 class ChargeController < ApplicationController
-
-  before_filter :login_required
-
   def index
 
     employee_id = User.find(session[:user_id]).employee_id

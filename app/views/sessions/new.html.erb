@@ -1,16 +1,33 @@
-<h1>Log In</h1>
+﻿<div class="block" id="block-login">
+        <h2>ログイン</h2>
+        <div class="content login">
+          <% form_tag session_path, {:class => 'form login'} do -%>
+            <div class="group wat-cf">
+              <div class="left">
+                <%= label_tag 'ユーザＩＤ', nil, :class=> 'label right' %>
+              </div>
+              <div class="right">
+                <%= text_field_tag 'login', @login, :class=>'text_field' %>
+              </div>
 
-<% form_tag session_path do -%>
-<p><%= label_tag 'login' %><br />
-<%= text_field_tag 'login', @login %></p>
+            </div>
+            <div class="group wat-cf">
+              <div class="left">
+                <%= label_tag 'パスワード', nil, :class=>'label right' %>
+              </div>
+              <div class="right">
+                <%= password_field_tag 'password', nil, :class=>'text_field' %>
+              </div>
 
-<p><%= label_tag 'password' %><br/>
-<%= password_field_tag 'password', nil %></p>
+            </div>
+            <div class="group navform wat-cf">
+              <div class="right">
+                <button class="button" type="submit">
+                  <img src="../images/web-app-theme/key.png" alt="Save"> ログイン
+                </button>
+              </div>
+            </div>
 
-<!-- Uncomment this if you want this functionality
-<p><%= label_tag 'remember_me', 'Remember me' %>
-<%= check_box_tag 'remember_me', '1', @remember_me %></p>
--->
-
-<p><%= submit_tag 'Log in' %></p>
-<% end -%>
+          <% end -%>
+        </div>
+      </div>
