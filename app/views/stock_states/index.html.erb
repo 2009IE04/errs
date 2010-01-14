@@ -6,9 +6,10 @@
   <label class="label">商品</label>
   <%= select(:post, :product_id, @products.map{|p| [p.product_name, p.id]}) %>
 </div>
+
 <div class="group">
   <label class="label">期間</label>
-  <%= select_date(Date.today, :use_month_numbers => true, :start_year => Date::new(1996).year, :prefix => 'start_date') %>～<%= select_date(Date.today, :use_month_numbers => true, :start_year => Date::new(1996).year, :prefix => 'end_date') %>
+<%= calendar_date_select_tag "date[start_date]", Time.now, :year_range => 20  %>〜<%= calendar_date_select_tag "date[end_date]", Time.now, :year_range => 20 %>
 </div>
 <div class="group navform wat-cf">
                   <button class="button" type="submit">
