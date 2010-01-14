@@ -12,9 +12,7 @@
 <%= calendar_date_select_tag "date[start_date]", Time.now, :year_range => 20  %>〜<%= calendar_date_select_tag "date[end_date]", Time.now, :year_range => 20 %>
 </div>
 <div class="group navform wat-cf">
-                  <button class="button" type="submit">
-                    <img src="../images/web-app-theme/tick.png" alt="表示"> 表示
-                  </button>
+  <%= submit_tag '表示'%>
 </div>
 <% end %>
 </div>

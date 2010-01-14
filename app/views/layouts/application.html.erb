@@ -8,7 +8,7 @@
 <body>
   <div id="container">
     <div id="header">
-      <h1><a href="/">ERRS</a></h1>
+      <%= render :partial => 'shared/header_logo' %>
       <div id="user-navigation">
         <ul class="wat-cf">
           <li><a href="/logout" class="logout"><%= t("web-app-theme.logout", :default => "Logout") %></a></li>
