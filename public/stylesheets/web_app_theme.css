@@ -29,9 +29,9 @@ body {
   font-family: sans-serif;  
 }
 
-#container {
+/* #container {
   min-width: 960px;
-}
+} */
 
 #header, #wrapper {
   padding: 0 20px;
