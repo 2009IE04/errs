@@ -6,7 +6,7 @@
 <body>
   <div id="container">
     <div id="header">
-      <h1><%= image_tag "errs_logo.gif", :size=>"132x50" %></h1>
+      <%= render :partial => 'shared/header_logo' %>
       <div id="user-navigation">
         <ul class="wat-cf">
           <li><a href="/logout" class="logout"><%= t("web-app-theme.logout", :default => "Logout") %></a></li>
