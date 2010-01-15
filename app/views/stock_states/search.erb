@@ -6,7 +6,7 @@
     <th class="last" style="width:25%">予定在庫</th>
   </tr>
 <% @stock_states.each_with_index do |stock_state, index| %>
-  <tr class="<%=index%2==0? 'even':'odd'%>">
+  <tr class="<%=index.even? ? 'even':'odd'%>">
     <td><%=h stock_state.state_date %></td>
     <td><%=h stock_state.out_quantity %></td>
     <td><%=h stock_state.in_quantity %></td>

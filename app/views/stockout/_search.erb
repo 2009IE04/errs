@@ -15,7 +15,7 @@
     <th class="last" style="width:25%">発注数</th>
   </tr>
 <% @stock_out_list.each_with_index do |stock_out, index| %>
-  <tr class="<%=index%2? 'even':'odd'%>">
+  <tr class="<%=index.even? ? 'even':'odd'%>">
     <td><%=h stock_out.product.product_name %></td>
     <td><%=h stock_out.state_date %></td>
     <td><%=h stock_out[:purchase_quantity] %></td>
