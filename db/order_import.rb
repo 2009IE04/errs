@@ -9,8 +9,8 @@ Order.transaction do
     o.customer_id = arr[1]
     o.employee_id = arr[2]
     o.customer_name = arr[3]
-    o.order_date = arr[4]
-    o.shipping_date = arr[5]
+    o.order_date = DateTime.parse(arr[4]).to_date
+    o.shipping_date = DateTime.parse(arr[5]).to_date
     o.save
     arr = Array.new
   end

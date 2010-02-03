@@ -12,6 +12,13 @@ development:
   username: root
   password: root
   host: localhost
+# for Oracle
+#development:
+#  adapter: jdbc
+#  driver: oracle.jdbc.driver.OracleDriver
+#  url: jdbc:oracle:thin:@localhost:1521:ERRS
+#  username: errs
+#  password: errs
 
 # Warning: The database defined as "test" will be erased and
 # re-generated from your development database when you run "rake".

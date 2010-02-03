@@ -7,8 +7,8 @@ Purchase.transaction do
     p = Purchase.new
     p.id = arr[0]
     p.supplier_id = arr[1]
-    p.purchase_date = arr[2]
-    p.arrival_date = arr[3]
+    p.purchase_date = DateTime.parse(arr[2]).to_date
+    p.arrival_date = DateTime.parse(arr[3]).to_date
     p.save
     arr = Array.new
   end

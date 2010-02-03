@@ -8,6 +8,13 @@ ActiveRecord::Base.establish_connection(
   :username => 'root',
   :password => 'root',
   :host => 'localhost'
+# for Oracle
+#  :adapter => 'jdbc',
+#  :driver => 'oracle.jdbc.driver.OracleDriver',
+#  :url => 'jdbc:oracle:thin:@localhost:1521:ERRS',
+#  :username => 'errs',
+#  :password => 'errs'
+# for MySQL
 #  :adapter => 'mysql',
 #  :coding => 'utf8',
 #  :host => 'localhost',
